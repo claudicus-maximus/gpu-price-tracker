@@ -1,22 +1,38 @@
 {
-  "updated": "2026-03-20T19:40:50.928700+00:00",
-  "total_listings": 10,
+  "updated": "2026-03-20T20:56:53.337212+00:00",
+  "total_listings": 9,
   "summary": {
-    "RTX 3090": {
+    "RTX 5080": {
       "count": 1,
+      "min": 1100.0,
+      "max": 1100.0,
+      "avg": 1100,
+      "latest": 1100.0,
+      "latest_date": "2026-03-09"
+    },
+    "RTX 3090": {
+      "count": 2,
       "min": 975.0,
-      "max": 975.0,
-      "avg": 975,
+      "max": 1000.0,
+      "avg": 988,
       "latest": 975.0,
       "latest_date": "2026-03-13"
     },
-    "RX 9070 XT": {
-      "count": 5,
-      "min": 849.99,
-      "max": 2700.0,
-      "avg": 1910,
-      "latest": 2700.0,
-      "latest_date": "2026-03-20"
+    "RTX 4070 Super": {
+      "count": 1,
+      "min": 600.0,
+      "max": 600.0,
+      "avg": 600,
+      "latest": 600.0,
+      "latest_date": "2026-03-11"
+    },
+    "RTX 3080 Ti": {
+      "count": 1,
+      "min": 950.0,
+      "max": 950.0,
+      "avg": 950,
+      "latest": 950.0,
+      "latest_date": "2026-03-15"
     },
     "RTX 3080": {
       "count": 1,
@@ -26,13 +42,13 @@
       "latest": 450.0,
       "latest_date": "2026-03-16"
     },
-    "RTX 5080": {
+    "RTX 5090": {
       "count": 1,
-      "min": 1810.0,
-      "max": 1810.0,
-      "avg": 1810,
-      "latest": 1810.0,
-      "latest_date": "2026-03-16"
+      "min": 1800.0,
+      "max": 1800.0,
+      "avg": 1800,
+      "latest": 1800.0,
+      "latest_date": "2026-03-18"
     },
     "RTX 4080": {
       "count": 1,
@@ -42,16 +58,46 @@
       "latest": 2000.0,
       "latest_date": "2026-03-19"
     },
-    "RX 7900 XTX": {
+    "RX 9070 XT": {
       "count": 1,
-      "min": 1020.0,
-      "max": 1020.0,
-      "avg": 1020,
-      "latest": 1020.0,
+      "min": 2700.0,
+      "max": 2700.0,
+      "avg": 2700,
+      "latest": 2700.0,
       "latest_date": "2026-03-20"
     }
   },
   "listings": [
+    {
+      "gpu": "RTX 5080",
+      "price": 1100.0,
+      "date": "2026-03-09",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Montreal, QC] [H] SFF PC, 12700KF, 32GB RAM, RTX 5080 FE [W] Local Cash, Paypal G&amp;S",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rpeiy8/montreal_qc_h_sff_pc_12700kf_32gb_ram_rtx_5080_fe/",
+      "source": "used",
+      "location": "Montreal, QC"
+    },
+    {
+      "gpu": "RTX 3090",
+      "price": 1000.0,
+      "date": "2026-03-09",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Vancouver, BC] [H] EVGA RTX 3090 FTW3 Ultra, Ryzen 9 9950X, 96 GB DDR5-6000 [W] PayPal G&amp;S, Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rooq4e/vancouver_bc_h_evga_rtx_3090_ftw3_ultra_ryzen_9/",
+      "source": "used",
+      "location": "Vancouver, BC"
+    },
+    {
+      "gpu": "RTX 4070 Super",
+      "price": 600.0,
+      "date": "2026-03-11",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Toronto, ON] [H] ASUS Dual 4070 Super, EVGA 2060 Super [W] Local Cash, PayPal, 5070ti",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rr49o2/toronto_on_h_asus_dual_4070_super_evga_2060_super/",
+      "source": "used",
+      "location": "Toronto, ON"
+    },
     {
       "gpu": "RTX 3090",
       "price": 975.0,
@@ -63,14 +109,14 @@
       "location": "Vancouver, BC"
     },
     {
-      "gpu": "RX 9070 XT",
-      "price": 900.0,
+      "gpu": "RTX 3080 Ti",
+      "price": 950.0,
       "date": "2026-03-15",
-      "subreddit": "bapcsalescanada",
-      "title": "[GPU] GIGABYTE Radeon RX 9070 XT GAMING OC 16gb ($900 Member deal) [Canada Computers]",
-      "url": "https://reddit.com/r/bapcsalescanada/comments/1rugvi4/gpu_gigabyte_radeon_rx_9070_xt_gaming_oc_16gb_900/",
-      "source": "deal",
-      "location": null
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Toronto, ON] [H] Complete Build i9-9900K, 3080 Ti, 32GB RAM [W] PayPal, Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1ru3rl8/toronto_on_h_complete_build_i99900k_3080_ti_32gb/",
+      "source": "used",
+      "location": "Toronto, ON"
     },
     {
       "gpu": "RTX 3080",
@@ -83,44 +129,14 @@
       "location": "Toronto, ON"
     },
     {
-      "gpu": "RX 9070 XT",
-      "price": 2599.0,
-      "date": "2026-03-16",
-      "subreddit": "bapcsalescanada",
-      "title": "[Prebuilt] White matched R7 9700F/9070 XT/32GB/2TB/850W PSU/360mm AIO [$2599/FS][Canada Computers]",
-      "url": "https://reddit.com/r/bapcsalescanada/comments/1rvgqvh/prebuilt_white_matched_r7_9700f9070_xt32gb2tb850w/",
-      "source": "deal",
-      "location": null
-    },
-    {
-      "gpu": "RTX 5080",
-      "price": 1810.0,
-      "date": "2026-03-16",
-      "subreddit": "bapcsalescanada",
-      "title": "[GPU] ASUS Prime Nvidia Geforce RTX 5080 16GB [$1810-10% SPC Code =$1629/FS][ASUS]",
-      "url": "https://reddit.com/r/bapcsalescanada/comments/1rvd72c/gpu_asus_prime_nvidia_geforce_rtx_5080_16gb/",
-      "source": "deal",
-      "location": null
-    },
-    {
-      "gpu": "RX 9070 XT",
-      "price": 2500.0,
-      "date": "2026-03-16",
-      "subreddit": "bapcsalescanada",
-      "title": "[Prebuilt] Ryzen 7 9700F, RX 9070 XT, 32GB, 2TB SSD, WiFi7/BT 5.4, B850, 850W 80+G, W11 Pro [$2500][Canada Computers]",
-      "url": "https://reddit.com/r/bapcsalescanada/comments/1rvbd1r/prebuilt_ryzen_7_9700f_rx_9070_xt_32gb_2tb_ssd/",
-      "source": "deal",
-      "location": null
-    },
-    {
-      "gpu": "RX 9070 XT",
-      "price": 849.99,
-      "date": "2026-03-17",
-      "subreddit": "bapcsalescanada",
-      "title": "[Bundle/GPU] In-Person Workshop Deals (Canada Computers)",
-      "url": "https://reddit.com/r/bapcsalescanada/comments/1rwe8t0/bundlegpu_inperson_workshop_deals_canada_computers/",
-      "source": "deal",
-      "location": null
+      "gpu": "RTX 5090",
+      "price": 1800.0,
+      "date": "2026-03-18",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Edmonton, AB] [H] High-End 4K/AI Custom PC (RTX 5090, 9950X3D, 64GB DDR5, 4TB Gen5) [W] Local Cash, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rxkclr/edmonton_ab_h_highend_4kai_custom_pc_rtx_5090/",
+      "source": "used",
+      "location": "Edmonton, AB"
     },
     {
       "gpu": "RTX 4080",
@@ -141,16 +157,6 @@
       "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rz4g96/torontoonh_full_am5_gaming_pc_9070_xt_taichi/",
       "source": "used",
       "location": "TORONTO-ON"
-    },
-    {
-      "gpu": "RX 7900 XTX",
-      "price": 1020.0,
-      "date": "2026-03-20",
-      "subreddit": "CanadianHardwareSwap",
-      "title": "[Edmonton, AB] [H] 9800X3D, 32GB DDR5 6800MHZ, 4TB NVME, 7900XTX [W] EMT, PAYPAL G&amp;S",
-      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rynnpf/edmonton_ab_h_9800x3d_32gb_ddr5_6800mhz_4tb_nvme/",
-      "source": "used",
-      "location": "Edmonton, AB"
     }
   ]
 }
