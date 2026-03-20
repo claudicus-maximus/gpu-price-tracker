@@ -27,27 +27,11 @@
       min-height: 100vh;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
 
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    header h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    header p {
-      color: var(--text-muted);
-      font-size: 0.875rem;
-    }
+    header { text-align: center; margin-bottom: 2rem; }
+    header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.25rem; }
+    header p { color: var(--text-muted); font-size: 0.875rem; }
 
     .stats-grid {
       display: grid;
@@ -70,11 +54,7 @@
       letter-spacing: 0.05em;
     }
 
-    .stat-card .value {
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-top: 0.25rem;
-    }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; margin-top: 0.25rem; }
 
     .section {
       background: var(--surface);
@@ -84,10 +64,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .section h2 {
-      font-size: 1.125rem;
-      margin-bottom: 1rem;
-    }
+    .section h2 { font-size: 1.125rem; margin-bottom: 1rem; }
 
     .filter-bar {
       display: flex;
@@ -110,15 +87,9 @@
     .filter-btn:hover { border-color: var(--accent); color: var(--text); }
     .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
 
-    .chart-container {
-      position: relative;
-      height: 400px;
-    }
+    .chart-container { position: relative; height: 400px; }
 
-    .gpu-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+    .gpu-table { width: 100%; border-collapse: collapse; }
 
     .gpu-table th, .gpu-table td {
       text-align: left;
@@ -135,40 +106,80 @@
     }
 
     .gpu-table td { font-size: 0.875rem; }
-
     .gpu-table tr:hover { background: rgba(56, 189, 248, 0.05); }
 
     .price { font-weight: 600; font-variant-numeric: tabular-nums; }
-    .price.deal { color: var(--green); }
-    .price.used { color: var(--accent); }
+    .price.good { color: var(--green); }
 
-    .tag {
-      display: inline-block;
-      padding: 0.125rem 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 0.6875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .tag.used { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
-    .tag.deal { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+    .location { color: var(--text-muted); font-size: 0.8125rem; }
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .listings-table { overflow-x: auto; }
 
-    .empty-state {
-      text-align: center;
-      padding: 3rem;
+    .empty-state { text-align: center; padding: 3rem; color: var(--text-muted); }
+
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
       color: var(--text-muted);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      transition: all 0.15s;
+    }
+
+    .page-btn:hover { border-color: var(--accent); color: var(--text); }
+    .page-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .page-btn:disabled { opacity: 0.4; cursor: default; }
+
+    .page-info { color: var(--text-muted); font-size: 0.8125rem; }
+
+    .listing-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .listing-controls select {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.8125rem;
+    }
+
+    .listing-controls label {
+      color: var(--text-muted);
+      font-size: 0.8125rem;
+    }
+
+    .post-link {
+      display: block;
+      max-width: 350px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     @media (max-width: 640px) {
       .chart-container { height: 300px; }
-      .gpu-table th:nth-child(4), .gpu-table td:nth-child(4),
-      .gpu-table th:nth-child(5), .gpu-table td:nth-child(5) { display: none; }
+      .gpu-table .hide-mobile { display: none; }
+      .post-link { max-width: 180px; }
     }
   </style>
 </head>
@@ -176,7 +187,7 @@
   <div class="container">
     <header>
       <h1>🎮 GPU Price Tracker</h1>
-      <p>Tracking used GPU prices across Canadian subreddits</p>
+      <p>Tracking used GPU prices from r/CanadianHardwareSwap</p>
       <p id="updated" style="margin-top: 0.25rem;"></p>
     </header>
 
@@ -210,7 +221,23 @@
     </div>
 
     <div class="section">
-      <h2>Recent Listings</h2>
+      <h2>All Listings</h2>
+      <div class="listing-controls">
+        <label>Filter:
+          <select id="listing-gpu-filter">
+            <option value="all">All GPUs</option>
+          </select>
+        </label>
+        <label>Sort:
+          <select id="listing-sort">
+            <option value="date-desc">Newest first</option>
+            <option value="date-asc">Oldest first</option>
+            <option value="price-asc">Price: low → high</option>
+            <option value="price-desc">Price: high → low</option>
+          </select>
+        </label>
+        <span class="page-info" id="listing-count"></span>
+      </div>
       <div class="listings-table">
         <table class="gpu-table" id="listings-table">
           <thead>
@@ -218,13 +245,14 @@
               <th>Date</th>
               <th>GPU</th>
               <th>Price</th>
-              <th>Source</th>
+              <th class="hide-mobile">Location</th>
               <th>Post</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </div>
+      <div class="pagination" id="pagination"></div>
     </div>
   </div>
 
@@ -235,9 +263,11 @@
       '#fbbf24', '#e879f9', '#22d3ee', '#a3e635', '#fb7185',
     ];
 
+    const PAGE_SIZE = 25;
     let chart = null;
     let allData = null;
     let activeGPUs = new Set();
+    let listingPage = 1;
 
     async function loadData() {
       try {
@@ -250,10 +280,97 @@
       }
     }
 
+    function getFilteredListings() {
+      const gpuFilter = document.getElementById('listing-gpu-filter').value;
+      const sort = document.getElementById('listing-sort').value;
+
+      let listings = [...allData.listings];
+      if (gpuFilter !== 'all') {
+        listings = listings.filter(l => l.gpu === gpuFilter);
+      }
+
+      listings.sort((a, b) => {
+        switch (sort) {
+          case 'date-desc': return (b.date || '').localeCompare(a.date || '');
+          case 'date-asc': return (a.date || '').localeCompare(b.date || '');
+          case 'price-asc': return a.price - b.price;
+          case 'price-desc': return b.price - a.price;
+        }
+        return 0;
+      });
+
+      return listings;
+    }
+
+    function renderListings() {
+      const listings = getFilteredListings();
+      const totalPages = Math.max(1, Math.ceil(listings.length / PAGE_SIZE));
+      if (listingPage > totalPages) listingPage = totalPages;
+
+      const start = (listingPage - 1) * PAGE_SIZE;
+      const pageListings = listings.slice(start, start + PAGE_SIZE);
+
+      document.getElementById('listing-count').textContent =
+        `${listings.length} listing${listings.length !== 1 ? 's' : ''}`;
+
+      const tbody = document.querySelector('#listings-table tbody');
+      tbody.innerHTML = pageListings.map(l => {
+        const avgForModel = allData.summary[l.gpu]?.avg;
+        const priceClass = avgForModel && l.price < avgForModel * 0.9 ? ' good' : '';
+        return `<tr>
+          <td>${l.date || '—'}</td>
+          <td><strong>${l.gpu || '—'}</strong></td>
+          <td class="price${priceClass}">$${l.price.toLocaleString()}</td>
+          <td class="hide-mobile location">${l.location || '—'}</td>
+          <td><a class="post-link" href="${l.url}" target="_blank" rel="noopener" title="${escHtml(l.title)}">${escHtml(l.title)}</a></td>
+        </tr>`;
+      }).join('');
+
+      // Pagination
+      const pag = document.getElementById('pagination');
+      if (totalPages <= 1) { pag.innerHTML = ''; return; }
+
+      let html = `<button class="page-btn" onclick="goPage(${listingPage - 1})" ${listingPage <= 1 ? 'disabled' : ''}>&laquo;</button>`;
+
+      const range = pagRange(listingPage, totalPages);
+      for (const p of range) {
+        if (p === '...') {
+          html += `<span class="page-info">…</span>`;
+        } else {
+          html += `<button class="page-btn${p === listingPage ? ' active' : ''}" onclick="goPage(${p})">${p}</button>`;
+        }
+      }
+
+      html += `<button class="page-btn" onclick="goPage(${listingPage + 1})" ${listingPage >= totalPages ? 'disabled' : ''}>&raquo;</button>`;
+      html += `<span class="page-info">${start + 1}–${Math.min(start + PAGE_SIZE, listings.length)} of ${listings.length}</span>`;
+      pag.innerHTML = html;
+    }
+
+    function pagRange(current, total) {
+      if (total <= 7) return Array.from({length: total}, (_, i) => i + 1);
+      const pages = [1];
+      if (current > 3) pages.push('...');
+      for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) pages.push(i);
+      if (current < total - 2) pages.push('...');
+      pages.push(total);
+      return pages;
+    }
+
+    function goPage(p) {
+      const total = Math.ceil(getFilteredListings().length / PAGE_SIZE);
+      if (p < 1 || p > total) return;
+      listingPage = p;
+      renderListings();
+      document.getElementById('listings-table').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function escHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
     function render() {
       if (!allData) return;
 
-      // Updated timestamp
       const updated = new Date(allData.updated);
       document.getElementById('updated').textContent =
         `Last updated: ${updated.toLocaleDateString('en-CA')} ${updated.toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit' })}`;
@@ -262,6 +379,8 @@
       const gpuCount = Object.keys(allData.summary).length;
       const allPrices = allData.listings.map(l => l.price);
       const avgPrice = allPrices.length ? Math.round(allPrices.reduce((a, b) => a + b, 0) / allPrices.length) : 0;
+      const dates = allData.listings.map(l => l.date).filter(Boolean).sort();
+      const dateRange = dates.length ? `${dates[0]} — ${dates[dates.length - 1]}` : '—';
 
       document.getElementById('stats').innerHTML = `
         <div class="stat-card">
@@ -269,7 +388,7 @@
           <div class="value">${allData.total_listings}</div>
         </div>
         <div class="stat-card">
-          <div class="label">GPU Models Tracked</div>
+          <div class="label">GPU Models</div>
           <div class="value">${gpuCount}</div>
         </div>
         <div class="stat-card">
@@ -277,15 +396,14 @@
           <div class="value">$${avgPrice.toLocaleString()}</div>
         </div>
         <div class="stat-card">
-          <div class="label">Sources</div>
-          <div class="value">2 subreddits</div>
+          <div class="label">Date Range</div>
+          <div class="value" style="font-size: 1rem">${dateRange}</div>
         </div>
       `;
 
-      // GPU filter buttons
+      // GPU filter buttons (chart)
       const gpus = Object.keys(allData.summary).sort();
       if (activeGPUs.size === 0) {
-        // Default: show top 5 by listing count
         gpus.sort((a, b) => allData.summary[b].count - allData.summary[a].count);
         gpus.slice(0, 5).forEach(g => activeGPUs.add(g));
         gpus.sort();
@@ -306,41 +424,34 @@
         });
       });
 
-      // Chart
       renderChart();
 
       // Summary table
+      const summaryGPUs = [...gpus].sort((a, b) => allData.summary[b].count - allData.summary[a].count);
       const summaryBody = document.querySelector('#summary-table tbody');
-      summaryBody.innerHTML = gpus.map(gpu => {
+      summaryBody.innerHTML = summaryGPUs.map(gpu => {
         const s = allData.summary[gpu];
         return `<tr>
           <td><strong>${gpu}</strong></td>
           <td>${s.count}</td>
           <td class="price">$${s.avg.toLocaleString()}</td>
-          <td class="price deal">$${s.min.toLocaleString()}</td>
+          <td class="price good">$${s.min.toLocaleString()}</td>
           <td class="price" style="color: var(--red)">$${s.max.toLocaleString()}</td>
           <td class="price">$${s.latest.toLocaleString()}</td>
         </tr>`;
       }).join('');
 
-      // Recent listings (newest first, limit 50)
-      const recent = [...allData.listings].reverse().slice(0, 50);
-      const listingsBody = document.querySelector('#listings-table tbody');
-      listingsBody.innerHTML = recent.map(l => {
-        const sourceClass = l.source === 'deal' ? 'deal' : 'used';
-        return `<tr>
-          <td>${l.date || '—'}</td>
-          <td><strong>${l.gpu || '—'}</strong></td>
-          <td class="price ${sourceClass}">$${l.price.toLocaleString()}</td>
-          <td><span class="tag ${sourceClass}">${l.source}</span></td>
-          <td><a href="${l.url}" target="_blank" rel="noopener">${truncate(l.title, 50)}</a></td>
-        </tr>`;
-      }).join('');
+      // Listing GPU filter dropdown
+      const gpuSelect = document.getElementById('listing-gpu-filter');
+      const currentVal = gpuSelect.value;
+      gpuSelect.innerHTML = '<option value="all">All GPUs</option>' +
+        summaryGPUs.map(g => `<option value="${g}" ${g === currentVal ? 'selected' : ''}>${g} (${allData.summary[g].count})</option>`).join('');
+
+      renderListings();
     }
 
     function renderChart() {
       const ctx = document.getElementById('priceChart').getContext('2d');
-
       const datasets = [];
       let colorIdx = 0;
 
@@ -366,7 +477,6 @@
       });
 
       if (chart) chart.destroy();
-
       chart = new Chart(ctx, {
         type: 'line',
         data: { datasets },
@@ -384,10 +494,7 @@
             y: {
               beginAtZero: false,
               grid: { color: 'rgba(51, 65, 85, 0.5)' },
-              ticks: {
-                color: '#94a3b8',
-                callback: v => '$' + v.toLocaleString(),
-              },
+              ticks: { color: '#94a3b8', callback: v => '$' + v.toLocaleString() },
             },
           },
           plugins: {
@@ -402,9 +509,9 @@
       });
     }
 
-    function truncate(str, len) {
-      return str.length > len ? str.slice(0, len) + '…' : str;
-    }
+    // Event listeners for listing controls
+    document.getElementById('listing-gpu-filter').addEventListener('change', () => { listingPage = 1; renderListings(); });
+    document.getElementById('listing-sort').addEventListener('change', () => { listingPage = 1; renderListings(); });
 
     loadData();
   </script>

@@ -1,8 +1,6 @@
 # GPU Price Tracker 🇨🇦
 
-Tracks used GPU prices (16GB+ VRAM) from Canadian subreddits:
-- [r/CanadianHardwareSwap](https://reddit.com/r/CanadianHardwareSwap) — used/second-hand
-- [r/bapcsalescanada](https://reddit.com/r/bapcsalescanada) — deals/sales
+Tracks used GPU prices (16GB+ VRAM) from [r/CanadianHardwareSwap](https://reddit.com/r/CanadianHardwareSwap).
 
 ## How it works
 
