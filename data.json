@@ -1,7 +1,15 @@
 {
-  "updated": "2026-03-20T20:56:53.337212+00:00",
-  "total_listings": 9,
+  "updated": "2026-03-20T23:26:53.926128+00:00",
+  "total_listings": 10,
   "summary": {
+    "RTX 4090": {
+      "count": 1,
+      "min": 1750.0,
+      "max": 1750.0,
+      "avg": 1750,
+      "latest": 1750.0,
+      "latest_date": "2026-03-07"
+    },
     "RTX 5080": {
       "count": 1,
       "min": 1100.0,
@@ -68,6 +76,16 @@
     }
   },
   "listings": [
+    {
+      "gpu": "RTX 4090",
+      "price": 1750.0,
+      "date": "2026-03-07",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Scarborough, ON] [H] Alienware M16 R1 (RTX 4090 4tb ssd 64gb ram) [W] Cash, Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rn11tl/scarborough_on_h_alienware_m16_r1_rtx_4090_4tb/",
+      "source": "used",
+      "location": "Scarborough, ON"
+    },
     {
       "gpu": "RTX 5080",
       "price": 1100.0,
