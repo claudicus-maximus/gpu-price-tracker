@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPU Price Tracker — Canada</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #4ade80;
+      --red: #f87171;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+    }
+
+    .stat-card .label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .stat-card .value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section h2 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .filter-btn {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.375rem 0.75rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 0.8125rem;
+      transition: all 0.15s;
+    }
+
+    .filter-btn:hover { border-color: var(--accent); color: var(--text); }
+    .filter-btn.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+
+    .chart-container {
+      position: relative;
+      height: 400px;
+    }
+
+    .gpu-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .gpu-table th, .gpu-table td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .gpu-table th {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .gpu-table td { font-size: 0.875rem; }
+
+    .gpu-table tr:hover { background: rgba(56, 189, 248, 0.05); }
+
+    .price { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .price.deal { color: var(--green); }
+    .price.used { color: var(--accent); }
+
+    .tag {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .tag.used { background: rgba(56, 189, 248, 0.15); color: var(--accent); }
+    .tag.deal { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .listings-table { overflow-x: auto; }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 640px) {
+      .chart-container { height: 300px; }
+      .gpu-table th:nth-child(4), .gpu-table td:nth-child(4),
+      .gpu-table th:nth-child(5), .gpu-table td:nth-child(5) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎮 GPU Price Tracker</h1>
+      <p>Tracking used GPU prices across Canadian subreddits</p>
+      <p id="updated" style="margin-top: 0.25rem;"></p>
+    </header>
+
+    <div class="stats-grid" id="stats"></div>
+
+    <div class="section">
+      <h2>Price Trends</h2>
+      <div class="filter-bar" id="gpu-filters"></div>
+      <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Summary by Model</h2>
+      <div class="listings-table">
+        <table class="gpu-table" id="summary-table">
+          <thead>
+            <tr>
+              <th>GPU</th>
+              <th>Listings</th>
+              <th>Avg Price</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Latest</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Recent Listings</h2>
+      <div class="listings-table">
+        <table class="gpu-table" id="listings-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>GPU</th>
+              <th>Price</th>
+              <th>Source</th>
+              <th>Post</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const COLORS = [
+      '#38bdf8', '#4ade80', '#f87171', '#facc15', '#a78bfa',
+      '#fb923c', '#2dd4bf', '#f472b6', '#818cf8', '#34d399',
+      '#fbbf24', '#e879f9', '#22d3ee', '#a3e635', '#fb7185',
+    ];
+
+    let chart = null;
+    let allData = null;
+    let activeGPUs = new Set();
+
+    async function loadData() {
+      try {
+        const resp = await fetch('data.json');
+        allData = await resp.json();
+        render();
+      } catch (e) {
+        document.getElementById('stats').innerHTML =
+          '<div class="empty-state">No data yet — waiting for first cron run.</div>';
+      }
+    }
+
+    function render() {
+      if (!allData) return;
+
+      // Updated timestamp
+      const updated = new Date(allData.updated);
+      document.getElementById('updated').textContent =
+        `Last updated: ${updated.toLocaleDateString('en-CA')} ${updated.toLocaleTimeString('en-CA', { hour: '2-digit', minute: '2-digit' })}`;
+
+      // Stats
+      const gpuCount = Object.keys(allData.summary).length;
+      const allPrices = allData.listings.map(l => l.price);
+      const avgPrice = allPrices.length ? Math.round(allPrices.reduce((a, b) => a + b, 0) / allPrices.length) : 0;
+
+      document.getElementById('stats').innerHTML = `
+        <div class="stat-card">
+          <div class="label">Total Listings</div>
+          <div class="value">${allData.total_listings}</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">GPU Models Tracked</div>
+          <div class="value">${gpuCount}</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Avg Price</div>
+          <div class="value">$${avgPrice.toLocaleString()}</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Sources</div>
+          <div class="value">2 subreddits</div>
+        </div>
+      `;
+
+      // GPU filter buttons
+      const gpus = Object.keys(allData.summary).sort();
+      if (activeGPUs.size === 0) {
+        // Default: show top 5 by listing count
+        gpus.sort((a, b) => allData.summary[b].count - allData.summary[a].count);
+        gpus.slice(0, 5).forEach(g => activeGPUs.add(g));
+        gpus.sort();
+      }
+
+      const filterBar = document.getElementById('gpu-filters');
+      filterBar.innerHTML = gpus.map(gpu => {
+        const active = activeGPUs.has(gpu) ? ' active' : '';
+        return `<button class="filter-btn${active}" data-gpu="${gpu}">${gpu} (${allData.summary[gpu].count})</button>`;
+      }).join('');
+
+      filterBar.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const gpu = btn.dataset.gpu;
+          if (activeGPUs.has(gpu)) activeGPUs.delete(gpu);
+          else activeGPUs.add(gpu);
+          render();
+        });
+      });
+
+      // Chart
+      renderChart();
+
+      // Summary table
+      const summaryBody = document.querySelector('#summary-table tbody');
+      summaryBody.innerHTML = gpus.map(gpu => {
+        const s = allData.summary[gpu];
+        return `<tr>
+          <td><strong>${gpu}</strong></td>
+          <td>${s.count}</td>
+          <td class="price">$${s.avg.toLocaleString()}</td>
+          <td class="price deal">$${s.min.toLocaleString()}</td>
+          <td class="price" style="color: var(--red)">$${s.max.toLocaleString()}</td>
+          <td class="price">$${s.latest.toLocaleString()}</td>
+        </tr>`;
+      }).join('');
+
+      // Recent listings (newest first, limit 50)
+      const recent = [...allData.listings].reverse().slice(0, 50);
+      const listingsBody = document.querySelector('#listings-table tbody');
+      listingsBody.innerHTML = recent.map(l => {
+        const sourceClass = l.source === 'deal' ? 'deal' : 'used';
+        return `<tr>
+          <td>${l.date || '—'}</td>
+          <td><strong>${l.gpu || '—'}</strong></td>
+          <td class="price ${sourceClass}">$${l.price.toLocaleString()}</td>
+          <td><span class="tag ${sourceClass}">${l.source}</span></td>
+          <td><a href="${l.url}" target="_blank" rel="noopener">${truncate(l.title, 50)}</a></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function renderChart() {
+      const ctx = document.getElementById('priceChart').getContext('2d');
+
+      const datasets = [];
+      let colorIdx = 0;
+
+      activeGPUs.forEach(gpu => {
+        const points = allData.listings
+          .filter(l => l.gpu === gpu)
+          .map(l => ({ x: l.date, y: l.price }));
+
+        if (points.length > 0) {
+          const color = COLORS[colorIdx % COLORS.length];
+          datasets.push({
+            label: gpu,
+            data: points,
+            borderColor: color,
+            backgroundColor: color + '33',
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            tension: 0.1,
+            borderWidth: 2,
+          });
+          colorIdx++;
+        }
+      });
+
+      if (chart) chart.destroy();
+
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: { datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'nearest', intersect: false },
+          scales: {
+            x: {
+              type: 'time',
+              time: { unit: 'day', tooltipFormat: 'MMM d, yyyy' },
+              grid: { color: 'rgba(51, 65, 85, 0.5)' },
+              ticks: { color: '#94a3b8' },
+            },
+            y: {
+              beginAtZero: false,
+              grid: { color: 'rgba(51, 65, 85, 0.5)' },
+              ticks: {
+                color: '#94a3b8',
+                callback: v => '$' + v.toLocaleString(),
+              },
+            },
+          },
+          plugins: {
+            legend: { labels: { color: '#e2e8f0' } },
+            tooltip: {
+              callbacks: {
+                label: ctx => `${ctx.dataset.label}: $${ctx.parsed.y.toLocaleString()}`,
+              },
+            },
+          },
+        },
+      });
+    }
+
+    function truncate(str, len) {
+      return str.length > len ? str.slice(0, len) + '…' : str;
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
