@@ -1,14 +1,70 @@
 {
-  "updated": "2026-03-20T23:26:53.926128+00:00",
-  "total_listings": 10,
+  "updated": "2026-03-20T23:56:55.312369+00:00",
+  "total_listings": 29,
   "summary": {
+    "RTX 3090": {
+      "count": 4,
+      "min": 975.0,
+      "max": 1200.0,
+      "avg": 1069,
+      "latest": 975.0,
+      "latest_date": "2026-03-13"
+    },
+    "RTX 3080": {
+      "count": 7,
+      "min": 450.0,
+      "max": 900.0,
+      "avg": 576,
+      "latest": 450.0,
+      "latest_date": "2026-03-16"
+    },
+    "RTX 5090": {
+      "count": 5,
+      "min": 200.0,
+      "max": 9000.0,
+      "avg": 3650,
+      "latest": 1800.0,
+      "latest_date": "2026-03-18"
+    },
     "RTX 4090": {
-      "count": 1,
-      "min": 1750.0,
-      "max": 1750.0,
-      "avg": 1750,
-      "latest": 1750.0,
+      "count": 3,
+      "min": 650.0,
+      "max": 2500.0,
+      "avg": 1683,
+      "latest": 1899.0,
       "latest_date": "2026-03-07"
+    },
+    "RTX 4070 Super": {
+      "count": 2,
+      "min": 700.0,
+      "max": 800.0,
+      "avg": 750,
+      "latest": 700.0,
+      "latest_date": "2026-03-11"
+    },
+    "RTX 4080": {
+      "count": 3,
+      "min": 1400.0,
+      "max": 2000.0,
+      "avg": 1700,
+      "latest": 2000.0,
+      "latest_date": "2026-03-19"
+    },
+    "RTX 4080 Super": {
+      "count": 1,
+      "min": 1120.0,
+      "max": 1120.0,
+      "avg": 1120,
+      "latest": 1120.0,
+      "latest_date": "2026-02-16"
+    },
+    "RTX 4070 Ti": {
+      "count": 1,
+      "min": 900.0,
+      "max": 900.0,
+      "avg": 900,
+      "latest": 900.0,
+      "latest_date": "2026-02-22"
     },
     "RTX 5080": {
       "count": 1,
@@ -18,53 +74,13 @@
       "latest": 1100.0,
       "latest_date": "2026-03-09"
     },
-    "RTX 3090": {
-      "count": 2,
-      "min": 975.0,
-      "max": 1000.0,
-      "avg": 988,
-      "latest": 975.0,
-      "latest_date": "2026-03-13"
-    },
-    "RTX 4070 Super": {
-      "count": 1,
-      "min": 600.0,
-      "max": 600.0,
-      "avg": 600,
-      "latest": 600.0,
-      "latest_date": "2026-03-11"
-    },
     "RTX 3080 Ti": {
       "count": 1,
-      "min": 950.0,
-      "max": 950.0,
-      "avg": 950,
-      "latest": 950.0,
+      "min": 900.0,
+      "max": 900.0,
+      "avg": 900,
+      "latest": 900.0,
       "latest_date": "2026-03-15"
-    },
-    "RTX 3080": {
-      "count": 1,
-      "min": 450.0,
-      "max": 450.0,
-      "avg": 450,
-      "latest": 450.0,
-      "latest_date": "2026-03-16"
-    },
-    "RTX 5090": {
-      "count": 1,
-      "min": 1800.0,
-      "max": 1800.0,
-      "avg": 1800,
-      "latest": 1800.0,
-      "latest_date": "2026-03-18"
-    },
-    "RTX 4080": {
-      "count": 1,
-      "min": 2000.0,
-      "max": 2000.0,
-      "avg": 2000,
-      "latest": 2000.0,
-      "latest_date": "2026-03-19"
     },
     "RX 9070 XT": {
       "count": 1,
@@ -77,14 +93,204 @@
   },
   "listings": [
     {
+      "gpu": "RTX 3090",
+      "price": 1100.0,
+      "date": "2026-01-12",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Montreal, QC] [H] EVGA RTX 3090 XC3 Ultra Gaming [W] Cash, Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qb4e4x/montreal_qc_h_evga_rtx_3090_xc3_ultra_gaming_w/",
+      "source": "used",
+      "location": "Montreal, QC"
+    },
+    {
+      "gpu": "RTX 3080",
+      "price": 500.0,
+      "date": "2026-01-14",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[North York / Toronto, ON] [H] White RTX 3080, White DDR5, SSD, White Lian Li TL 140mm Fan [W] Local / Paypal G&amp;S",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qd1bs7/north_york_toronto_on_h_white_rtx_3080_white_ddr5/",
+      "source": "used",
+      "location": "North York / Toronto, ON"
+    },
+    {
+      "gpu": "RTX 3080",
+      "price": 450.0,
+      "date": "2026-01-19",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Scarborough, ON] [H] MSI RTX 3080 Ventus 3x Plus, G.Skill Trident Z 32GB 3600MHz CL18 DDR4 RAM, Yuki Aim 65% HE Keyboard [W] Cash, Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qhhz7w/scarborough_on_h_msi_rtx_3080_ventus_3x_plus/",
+      "source": "used",
+      "location": "Scarborough, ON"
+    },
+    {
+      "gpu": "RTX 5090",
+      "price": 9000.0,
+      "date": "2026-01-19",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[ON] [H] AMD Ryzen Threadripper PRO 7985WX (64C/128T) [W] $9000 / PayPal G&amp;S / RTX 5090 OC + Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qhbhna/on_h_amd_ryzen_threadripper_pro_7985wx_64c128t_w/",
+      "source": "used",
+      "location": "ON"
+    },
+    {
+      "gpu": "RTX 3090",
+      "price": 1200.0,
+      "date": "2026-01-22",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[North York, ON] [H] MSI RTX 5070 TI Shadow, Focusrite Scarlett Solo Gen 3, Moondrop Blessing 3, Formd T1 v2.1 Silver (Steel panels) [W] Local Cash, ET, S25 Ultra, 3090, Vivo X300 Pro Global Edition, Xiaomi 15U Global Edition",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qjf7tv/north_york_on_h_msi_rtx_5070_ti_shadow_focusrite/",
+      "source": "used",
+      "location": "North York, ON"
+    },
+    {
       "gpu": "RTX 4090",
-      "price": 1750.0,
+      "price": 650.0,
+      "date": "2026-01-24",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Montreal, QC] [H] Multiple RTX 4090 Waterblocks [W] Cash, Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qltd61/montreal_qc_h_multiple_rtx_4090_waterblocks_w/",
+      "source": "used",
+      "location": "Montreal, QC"
+    },
+    {
+      "gpu": "RTX 4070 Super",
+      "price": 800.0,
+      "date": "2026-01-24",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Markham, ON] [H] Gaming Desktop 5700X3D, 4070 SUPER [W] Cash [Local Only]",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qlc2y6/markham_on_h_gaming_desktop_5700x3d_4070_super_w/",
+      "source": "used",
+      "location": "Markham, ON"
+    },
+    {
+      "gpu": "RTX 3080",
+      "price": 750.0,
+      "date": "2026-01-25",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Oshawa/Whitby, ON][H] Sealed rtx 3080 FE, Sealed rtx 3070 Ti FE [W] Cash, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qmqw1o/oshawawhitby_onh_sealed_rtx_3080_fe_sealed_rtx/",
+      "source": "used",
+      "location": "Oshawa/Whitby, ON"
+    },
+    {
+      "gpu": "RTX 4080",
+      "price": 1400.0,
+      "date": "2026-01-26",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Richmond Hill, ON] [H] Asus ROG Strix Scar 17 X3D - 17.3\" WQHD 240Hz - Ryzen 9 7945HX3D (16c, 32t) - RTX 4080 12GB - 32GB DDR5 5800MHz - 1TB PCIe NVMe [W] Cash/Etrans, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qnvvk1/richmond_hill_on_h_asus_rog_strix_scar_17_x3d_173/",
+      "source": "used",
+      "location": "Richmond Hill, ON"
+    },
+    {
+      "gpu": "RTX 3080",
+      "price": 480.0,
+      "date": "2026-01-27",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Vaughan, ON] [H] Asus 3080 Strix 10gb [W] Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qotval/vaughan_on_h_asus_3080_strix_10gb_w_cash/",
+      "source": "used",
+      "location": "Vaughan, ON"
+    },
+    {
+      "gpu": "RTX 3080",
+      "price": 900.0,
+      "date": "2026-01-31",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Toronto, ON] [H] Monitors, Monitor Arms, Retroid Pocket Mini v2, AYN Odin 2 Portal + More [W] Retroid Pocket Classic, Konkr Pocket Fit, Cash, PayPal,",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qsf3o3/toronto_on_h_monitors_monitor_arms_retroid_pocket/",
+      "source": "used",
+      "location": "Toronto, ON"
+    },
+    {
+      "gpu": "RTX 5090",
+      "price": 2650.0,
+      "date": "2026-02-05",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Coquitlam, BC][H]Various 32GB,48GB,64GB,96GB DDR5 Ram [W] Cash, EMT, 4090,5080,5090",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qw6lx8/coquitlam_bchvarious_32gb48gb64gb96gb_ddr5_ram_w/",
+      "source": "used",
+      "location": "Coquitlam, BC"
+    },
+    {
+      "gpu": "RTX 4080 Super",
+      "price": 1120.0,
+      "date": "2026-02-16",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[London, ON] [H] Full PC Setup \u2013 7950X3D, RTX 4080 Super, LG 32\" OLED, Peripherals &amp; More [W] PayPal G&amp;S, Local Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1r5ukq6/london_on_h_full_pc_setup_7950x3d_rtx_4080_super/",
+      "source": "used",
+      "location": "London, ON"
+    },
+    {
+      "gpu": "RTX 4080",
+      "price": 1700.0,
+      "date": "2026-02-20",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Richmond Hill, ON] [H] Asus ROG Strix Scar 17 X3D - 17.3\" WQHD 240Hz - Ryzen 9 7945HX3D (16c, 32t) - RTX 4080 12GB - 32GB DDR5 5800MHz - 1TB PCIe NVMe [W] Cash/Etrans, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1ra6rbw/richmond_hill_on_h_asus_rog_strix_scar_17_x3d_173/",
+      "source": "used",
+      "location": "Richmond Hill, ON"
+    },
+    {
+      "gpu": "RTX 3080",
+      "price": 500.0,
+      "date": "2026-02-22",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[London, ON] [H] RTX 3080 12 GB EVGA FTW3 Ultra [W] Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rbzn5k/london_on_h_rtx_3080_12_gb_evga_ftw3_ultra_w/",
+      "source": "used",
+      "location": "London, ON"
+    },
+    {
+      "gpu": "RTX 4070 Ti",
+      "price": 900.0,
+      "date": "2026-02-22",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Vancouver, BC] [H] ITX Build or parts 4070 Ti, MSI MPG B650I EDGE WIFI, 32GB (2x16GB) DDR5 5200MHz CL40 Black 1.25V, AMD Ryzen 7 7700X [W] CASH Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rba0ub/vancouver_bc_h_itx_build_or_parts_4070_ti_msi_mpg/",
+      "source": "used",
+      "location": "Vancouver, BC"
+    },
+    {
+      "gpu": "RTX 5090",
+      "price": 4600.0,
+      "date": "2026-02-22",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Toronto, ON][H] Asus RTX 5090 Astral, 64gb (2x32gb) Corsair Vengeance RGB (6400mhz CL 32), Intel i7 265k, Asus B860i Motherboard [W] Cash, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rb6v3e/toronto_onh_asus_rtx_5090_astral_64gb_2x32gb/",
+      "source": "used",
+      "location": "Toronto, ON"
+    },
+    {
+      "gpu": "RTX 4090",
+      "price": 2500.0,
+      "date": "2026-03-07",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Scarborough, ON] [H] RTX 4090 FE, 5700x/32gb 3600mhz/B550-A Bundle, 16gb G.Skill Trident Z Royal DDR4, 1200w 80+ Gold PSU[W] Cash, Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rn2mfa/scarborough_on_h_rtx_4090_fe_5700x32gb/",
+      "source": "used",
+      "location": "Scarborough, ON"
+    },
+    {
+      "gpu": "RTX 4090",
+      "price": 1899.0,
       "date": "2026-03-07",
       "subreddit": "CanadianHardwareSwap",
       "title": "[Scarborough, ON] [H] Alienware M16 R1 (RTX 4090 4tb ssd 64gb ram) [W] Cash, Paypal",
       "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rn11tl/scarborough_on_h_alienware_m16_r1_rtx_4090_4tb/",
       "source": "used",
       "location": "Scarborough, ON"
+    },
+    {
+      "gpu": "RTX 5090",
+      "price": 200.0,
+      "date": "2026-03-08",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Mississauga, ON] [H] FormD T1 Flipped Travel Kit + PCIe Gen 5 Riser &amp; Custom 12VHPWR, ROG Strix B650E-I, Corsair SF1000 [W] Cash, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rnq1qz/mississauga_on_h_formd_t1_flipped_travel_kit_pcie/",
+      "source": "used",
+      "location": "Mississauga, ON"
     },
     {
       "gpu": "RTX 5080",
@@ -108,7 +314,7 @@
     },
     {
       "gpu": "RTX 4070 Super",
-      "price": 600.0,
+      "price": 700.0,
       "date": "2026-03-11",
       "subreddit": "CanadianHardwareSwap",
       "title": "[Toronto, ON] [H] ASUS Dual 4070 Super, EVGA 2060 Super [W] Local Cash, PayPal, 5070ti",
@@ -128,7 +334,7 @@
     },
     {
       "gpu": "RTX 3080 Ti",
-      "price": 950.0,
+      "price": 900.0,
       "date": "2026-03-15",
       "subreddit": "CanadianHardwareSwap",
       "title": "[Toronto, ON] [H] Complete Build i9-9900K, 3080 Ti, 32GB RAM [W] PayPal, Cash",
