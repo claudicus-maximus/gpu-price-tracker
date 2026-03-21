@@ -1,7 +1,15 @@
 {
-  "updated": "2026-03-20T23:56:55.312369+00:00",
-  "total_listings": 29,
+  "updated": "2026-03-21T00:26:54.643212+00:00",
+  "total_listings": 30,
   "summary": {
+    "RTX 4080": {
+      "count": 4,
+      "min": 1400.0,
+      "max": 2000.0,
+      "avg": 1750,
+      "latest": 2000.0,
+      "latest_date": "2026-03-19"
+    },
     "RTX 3090": {
       "count": 4,
       "min": 975.0,
@@ -41,14 +49,6 @@
       "avg": 750,
       "latest": 700.0,
       "latest_date": "2026-03-11"
-    },
-    "RTX 4080": {
-      "count": 3,
-      "min": 1400.0,
-      "max": 2000.0,
-      "avg": 1700,
-      "latest": 2000.0,
-      "latest_date": "2026-03-19"
     },
     "RTX 4080 Super": {
       "count": 1,
@@ -92,6 +92,16 @@
     }
   },
   "listings": [
+    {
+      "gpu": "RTX 4080",
+      "price": 1899.0,
+      "date": "2026-01-11",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Calgary AB] [H] ASUS G14 2023 - RTX 4080, 32GB RAM, 1TB FireCuda 530, AX210 Wi-Fi, 1yr Warranty [W] Local Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1qaafxz/calgary_ab_h_asus_g14_2023_rtx_4080_32gb_ram_1tb/",
+      "source": "used",
+      "location": "Calgary AB"
+    },
     {
       "gpu": "RTX 3090",
       "price": 1100.0,
