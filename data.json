@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-22T00:00:06.967417+00:00",
-  "total_listings": 30,
+  "updated": "2026-03-22T13:01:02.527195+00:00",
+  "total_listings": 31,
   "summary": {
     "RTX 4080": {
       "count": 4,
@@ -67,12 +67,12 @@
       "latest_date": "2026-02-22"
     },
     "RTX 5080": {
-      "count": 1,
-      "min": 1100.0,
+      "count": 2,
+      "min": 1000.0,
       "max": 1100.0,
-      "avg": 1100,
-      "latest": 1100.0,
-      "latest_date": "2026-03-09"
+      "avg": 1050,
+      "latest": 1000.0,
+      "latest_date": "2026-03-22"
     },
     "RTX 3080 Ti": {
       "count": 1,
@@ -391,6 +391,16 @@
       "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1rz4g96/torontoonh_full_am5_gaming_pc_9070_xt_taichi/",
       "source": "used",
       "location": "TORONTO-ON"
+    },
+    {
+      "gpu": "RTX 5080",
+      "price": 1000.0,
+      "date": "2026-03-22",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Toronto, On] [H] Asus TUF gaming 4070 Ti super OC edition [W] Cash, PayPal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1s0eukh/toronto_on_h_asus_tuf_gaming_4070_ti_super_oc/",
+      "source": "used",
+      "location": "Toronto, On"
     }
   ]
 }
