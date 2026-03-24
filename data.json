@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-22T13:01:02.527195+00:00",
-  "total_listings": 31,
+  "updated": "2026-03-24T13:01:02.723777+00:00",
+  "total_listings": 32,
   "summary": {
     "RTX 4080": {
       "count": 4,
@@ -75,12 +75,12 @@
       "latest_date": "2026-03-22"
     },
     "RTX 3080 Ti": {
-      "count": 1,
-      "min": 900.0,
+      "count": 2,
+      "min": 600.0,
       "max": 900.0,
-      "avg": 900,
-      "latest": 900.0,
-      "latest_date": "2026-03-15"
+      "avg": 750,
+      "latest": 600.0,
+      "latest_date": "2026-03-24"
     },
     "RX 9070 XT": {
       "count": 1,
@@ -401,6 +401,16 @@
       "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1s0eukh/toronto_on_h_asus_tuf_gaming_4070_ti_super_oc/",
       "source": "used",
       "location": "Toronto, On"
+    },
+    {
+      "gpu": "RTX 3080 Ti",
+      "price": 600.0,
+      "date": "2026-03-24",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Toronto, ON] [H] 5800X3D, 3080 Ti Founder's Edition, 32GB RAM Complete Build [W] Cash",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1s239ac/toronto_on_h_5800x3d_3080_ti_founders_edition/",
+      "source": "used",
+      "location": "Toronto, ON"
     }
   ]
 }
