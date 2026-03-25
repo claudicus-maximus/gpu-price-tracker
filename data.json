@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-24T18:00:07.438691+00:00",
-  "total_listings": 32,
+  "updated": "2026-03-25T00:01:15.282857+00:00",
+  "total_listings": 33,
   "summary": {
     "RTX 4080": {
       "count": 4,
@@ -75,11 +75,11 @@
       "latest_date": "2026-03-22"
     },
     "RTX 3080 Ti": {
-      "count": 2,
+      "count": 3,
       "min": 600.0,
-      "max": 900.0,
-      "avg": 750,
-      "latest": 600.0,
+      "max": 1630.0,
+      "avg": 1043,
+      "latest": 1630.0,
       "latest_date": "2026-03-24"
     },
     "RX 9070 XT": {
@@ -411,6 +411,16 @@
       "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1s239ac/toronto_on_h_5800x3d_3080_ti_founders_edition/",
       "source": "used",
       "location": "Toronto, ON"
+    },
+    {
+      "gpu": "RTX 3080 Ti",
+      "price": 1630.0,
+      "date": "2026-03-24",
+      "subreddit": "CanadianHardwareSwap",
+      "title": "[Waterloo, ON] [H] RTX 3080 Ti, 3070, 12900KF, RAM, Mice, Peripherals (priced to sell, bundle discounts) [W] Cash, Paypal",
+      "url": "https://reddit.com/r/CanadianHardwareSwap/comments/1s2ta6p/waterloo_on_h_rtx_3080_ti_3070_12900kf_ram_mice/",
+      "source": "used",
+      "location": "Waterloo, ON"
     }
   ]
 }
